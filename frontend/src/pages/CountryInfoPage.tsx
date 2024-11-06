@@ -23,8 +23,6 @@ export const CountryInfoPage = () => {
 
   const handleRowClick = (newCountryCode: string) => {
     navigate(`/country/${newCountryCode}`);
-    setIsLoading(true);
-    setError(null);
   };
 
   if (isLoading)
@@ -58,46 +56,58 @@ export const CountryInfoPage = () => {
             className="w-32 mb-8"
           />
 
-          <h3 className="text-2xl font-semibold mt-6 mb-2">Border Countries</h3>
-          <table className="w-full max-w-lg text-left border border-gray-700 mt-4">
-            <thead>
-              <tr>
-                <th className="p-2 border-b border-gray-700">Common Name</th>
-                <th className="p-2 border-b border-gray-700">Official Name</th>
-                <th className="p-2 border-b border-gray-700">Country Code</th>
-                <th className="p-2 border-b border-gray-700">Region</th>
-              </tr>
-            </thead>
-            <tbody>
-              {country.borders.map((border) => (
-                <tr
-                  key={border.countryCode}
-                  className="cursor-pointer"
-                  onClick={() => handleRowClick(border.countryCode)}
-                >
-                  <td className="p-2 border-b border-gray-700">
-                    <Link
-                      to={`/country/${border.countryCode}`}
-                      className="text-blue-400 hover:text-blue-300"
+          <div className="flex flex-col md:flex-row gap-20">
+            <div>
+              <h3 className="text-2xl font-semibold mt-6 mb-2">
+                Border Countries
+              </h3>
+              <table className="w-full max-w-lg text-left border border-gray-700 mt-4">
+                <thead>
+                  <tr>
+                    <th className="p-2 border-b border-gray-700">
+                      Common Name
+                    </th>
+                    <th className="p-2 border-b border-gray-700">
+                      Official Name
+                    </th>
+                    <th className="p-2 border-b border-gray-700">
+                      Country Code
+                    </th>
+                    <th className="p-2 border-b border-gray-700">Region</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {country.borders.map((border) => (
+                    <tr
+                      key={border.countryCode}
+                      className="cursor-pointer"
+                      onClick={() => handleRowClick(border.countryCode)}
                     >
-                      {border.commonName}
-                    </Link>
-                  </td>
-                  <td className="p-2 border-b border-gray-700">
-                    {border.officialName}
-                  </td>
-                  <td className="p-2 border-b border-gray-700">
-                    {border.countryCode}
-                  </td>
-                  <td className="p-2 border-b border-gray-700">
-                    {border.region}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                      <td className="p-2 border-b border-gray-700">
+                        <Link
+                          to={`/country/${border.countryCode}`}
+                          className="text-blue-400 hover:text-blue-300"
+                        >
+                          {border.commonName}
+                        </Link>
+                      </td>
+                      <td className="p-2 border-b border-gray-700">
+                        {border.officialName}
+                      </td>
+                      <td className="p-2 border-b border-gray-700">
+                        {border.countryCode}
+                      </td>
+                      <td className="p-2 border-b border-gray-700">
+                        {border.region}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-          {<PopulationChart country={country} />}
+            {<PopulationChart country={country} />}
+          </div>
         </>
       )}
     </div>
