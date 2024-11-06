@@ -23,6 +23,7 @@ export const CountryInfoPage = () => {
 
   const handleRowClick = (newCountryCode: string) => {
     navigate(`/country/${newCountryCode}`);
+    setIsLoading(true);
   };
 
   if (isLoading)
