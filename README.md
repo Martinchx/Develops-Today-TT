@@ -20,13 +20,13 @@ cd backend
 2. Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start backend:
 
 ```bash
-npm run start:dev
+pnpm run start:dev
 ```
 
 ## Frontend (React)
@@ -40,13 +40,13 @@ cd frontend
 2. Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start frontend:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## Testing the Application
