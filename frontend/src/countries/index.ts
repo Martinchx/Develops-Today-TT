@@ -1,3 +1,4 @@
+export * from "./components/CountriesTable";
 export * from "./components/CountryBorderItem";
 export * from "./components/CountryBordersTable";
 export * from "./components/CountryItem";
