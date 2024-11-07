@@ -1,55 +1,53 @@
-# Develops-Today-TT
+# 🌍 Develops Today - Test Task
 
-This is a full-stack application built with **React** (frontend) and **NestJS** (backend).
+This repository contains a solution for the Develops Today technical assessment, focused on creating an app that provides information about countries.
 
-## Project Structure
+> [!IMPORTANT]
+> 📄 For full assessment details, see the [Technical Assessment Document](https://develops.notion.site/Full-Stack-JS-engineer-test-assessment-the-Country-Info-App-5239484850be45d79702fd06773fc65a).
 
-- `frontend/`: React application (client-side).
-- `backend/`: NestJS API server (server-side).
+## 🚀 Running the Application
 
-# Running the Application
+### Backend (NestJS)
 
-## Backend (NestJS)
+1. Navigate to the `backend` folder:
 
-1. Navigate to backend/:
-
-```bash
-cd backend
-```
+   ```bash
+   cd backend
+   ```
 
 2. Install dependencies:
 
-```bash
-pnpm install
-```
+   ```bash
+   pnpm install
+   ```
 
-3. Start backend:
+3. Start the backend server:
 
-```bash
-pnpm run start:dev
-```
+   ```bash
+   pnpm run start:dev
+   ```
 
-## Frontend (React)
+### Frontend (React)
 
-1. Navigate to frontend/:
+1. Navigate to the `frontend` folder:
 
-```bash
-cd frontend
-```
+   ```bash
+   cd frontend
+   ```
 
 2. Install dependencies:
 
-```bash
-pnpm install
-```
+   ```bash
+   pnpm install
+   ```
 
-3. Start frontend:
+3. Start the frontend app:
 
-```bash
-pnpm run dev
-```
+   ```bash
+   pnpm run dev
+   ```
 
-## Testing the Application
+## 🌐 Testing the Application
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:3000
+- **Frontend**: [http://localhost:5173](http://localhost:5173)
+- **Backend**: [http://localhost:3000](http://localhost:3000)
