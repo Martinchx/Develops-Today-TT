@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { CountriesPage, CountryInfoPage } from "../pages";
+import { CountriesPage, CountryInfoPage } from "../countries";
 
 export const AppRoutes = () => {
   return (

@@ -8,7 +8,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-import { CountryDetail } from "../interfaces";
+import { CountryDetail } from "..";
 
 Chart.register(
   CategoryScale,

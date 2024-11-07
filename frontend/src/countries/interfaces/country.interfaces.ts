@@ -1,3 +1,8 @@
+export interface Country {
+  countryCode: string;
+  name: string;
+}
+
 export interface BorderDetail {
   commonName: string;
   officialName: string;
