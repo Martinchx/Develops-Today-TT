@@ -2,9 +2,10 @@ import { BorderDetail, CountryBorderItem } from "..";
 
 interface Props {
   borders: BorderDetail[];
+  handleNavigation: (countryCode: string) => void;
 }
 
-export const CountryBordersTable = ({ borders }: Props) => {
+export const CountryBordersTable = ({ borders, handleNavigation }: Props) => {
   return (
     <div>
       <h3 className="text-2xl font-semibold mt-6 mb-2">Border Countries</h3>
@@ -19,7 +20,11 @@ export const CountryBordersTable = ({ borders }: Props) => {
         </thead>
         <tbody>
           {borders.map((border) => (
-            <CountryBorderItem key={border.countryCode} border={border} />
+            <CountryBorderItem
+              key={border.countryCode}
+              border={border}
+              handleNavigation={handleNavigation}
+            />
           ))}
         </tbody>
       </table>

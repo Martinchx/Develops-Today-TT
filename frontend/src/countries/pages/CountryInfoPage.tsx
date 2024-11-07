@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { envs, ErrorMessage, Loader } from "../../shared";
 import {
@@ -10,6 +10,7 @@ import {
 } from "..";
 
 export const CountryInfoPage = () => {
+  const navigate = useNavigate();
   const { code } = useParams<{ code: string }>();
 
   const [country, setCountry] = useState<CountryDetail | null>(null);
@@ -26,6 +27,12 @@ export const CountryInfoPage = () => {
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   }, [code]);
+
+  const handleNavigation = (countryCode: string) => {
+    navigate(`/country/${countryCode}`);
+    setCountry(null);
+    setIsLoading(true);
+  };
 
   if (error) return <ErrorMessage error={error} />;
 
@@ -46,7 +53,10 @@ export const CountryInfoPage = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-20">
-            <CountryBordersTable borders={country.borders} />
+            <CountryBordersTable
+              borders={country.borders}
+              handleNavigation={handleNavigation}
+            />
             <PopulationChart country={country} />
           </div>
         </>
